@@ -53,8 +53,7 @@ async def sendScheduledMessage():
     while True:
         for item in myScheduler.items:
             now = datetime.datetime.now()
-            #then = item.time + datetime.timedelta(hours=int(item.delay))
-            then = item.time + datetime.timedelta(minutes=int(item.delay))
+            then = item.time + datetime.timedelta(hours=int(item.delay))
             wait_time = (then-now).total_seconds()
             print(wait_time)
             if wait_time <= 0:
