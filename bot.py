@@ -58,7 +58,7 @@ async def sendScheduledMessage():
             print(wait_time)
             if wait_time <= 0:
                 channel = bot.get_channel(item.channel)
-                await channel.send("@everyone" + item.message)
+                await channel.send("@everyone\n" + item.message)
                 item.time = then
                 myScheduler.updateIds()
             else:
