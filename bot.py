@@ -26,6 +26,7 @@ async def addNewSchedule(ctx, date, delay, *args):
     chnl = ctx.message.channel.id
     msg = " ".join(args)
     now = datetime.datetime.now()
+    now = now + datetime.timedelta(hours=24)
     h, m, s = str(date).split(":")
     now = now.replace(hour=int(h), minute=int(m), second=int(s), microsecond=0)
     item = ScheduleItem(chnl, msg, now, delay)
