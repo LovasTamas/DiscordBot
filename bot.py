@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 async def info(ctx):
     await ctx.send("The following commands are available:\n\
                 - !info : Gives addational information about commands usage.\n\n\
-                - !addNewSchedule : Add a new item to the schedule table with the everyone tag, starting from tomorrow. Usage: [!addNewSchedule hh:mm:ss h Message] Example: [!addNewSchedule 12:00:00 24 Hello my lovely cp!] would result in a repeating message of '@ everyone Hello my lovely cp!' every 24 hour starting from tomorrow. !!!Please note that only integers are accaptable as numbers, so no 3.5 and other tricky solutions!!!'\n\n\
+                - !addNewSchedule : Add a new item to the schedule table with the everyone tag. Usage: [!addNewSchedule hh:mm:ss h Message] Example: [!addNewSchedule 12:00:00 24 Hello my lovely cp!] would result in a repeating message of '@ everyone Hello my lovely cp!' every 24 hour. !!!Please note that only integers are accaptable as numbers, so no 3.5 and other tricky solutions!!!'\n\n\
                 - !listSchedules : Gives a list about the scheduled items.\n\n\
                 - !deleteSchedule : Remove a scheduled item. Usage: [!deleteSchedule ID] Example: [!deleteSchedule 5] would delete the ScheduleItem with ID 5. To get the responding ids use !listSchedules. !!!Please note that after deleting one item the IDs WILL probably change!!!")
 
