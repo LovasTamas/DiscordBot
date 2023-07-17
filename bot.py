@@ -27,7 +27,7 @@ async def addNewSchedule(ctx, date, delay, *args):
     msg = " ".join(args)
     now = datetime.datetime.now()
     h, m, s = str(date).split(":")
-    if now.hour > int(h):
+    if now.hour > (now.replace(hour=int(h))+datetime.timedelta(hours=int(delay))).hour:
         now = now+datetime.timedelta(hours=24)
     now = now.replace(hour=int(h), minute=int(m), second=int(s), microsecond=0)
     item = ScheduleItem(chnl, msg, now, delay)
