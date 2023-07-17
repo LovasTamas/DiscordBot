@@ -27,6 +27,8 @@ async def addNewSchedule(ctx, date, delay, *args):
     msg = " ".join(args)
     now = datetime.datetime.now()
     h, m, s = str(date).split(":")
+    if now.hour > int(h):
+        now = now+datetime.timedelta(hours=24)
     now = now.replace(hour=int(h), minute=int(m), second=int(s), microsecond=0)
     item = ScheduleItem(chnl, msg, now, delay)
     await ctx.send(f"Date was set to: {now}, the delay was set to: {delay}h, with the message of: {msg}")
